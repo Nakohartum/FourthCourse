@@ -18,7 +18,7 @@ namespace Asteroids
         {
             var speed = Speed * deltaTime;
             _move.Set(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed, 0f);
-            _transform.localPosition += _move;
+            _transform.Translate(_move, Space.World);
         }
     }
 }
