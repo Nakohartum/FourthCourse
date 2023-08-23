@@ -20,5 +20,15 @@ namespace Asteroids
             _move.Set(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed, 0f);
             _transform.Translate(_move, Space.World);
         }
+
+        public void IncreaseSpeed(float value)
+        {
+            Speed += value;
+        }
+
+        public void DecreaseSpeed(float value)
+        {
+            Speed += value;
+        }
     }
 }
