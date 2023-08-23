@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using Asteroids;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace _Root.Code.Health
 {
@@ -13,9 +16,23 @@ namespace _Root.Code.Health
             Current = current;
         }
 
-        public void ChangeCurrentHealth(float amount)
+        public void ChangeCurrentHealth(float amount, GameObject go)
         {
             Current = amount;
+            if (Current > Max)
+            {
+                Current = Max;
+            }
+
+            if (Current <= 0)
+            {
+                Die(go);
+            }
+        }
+
+        private void Die(GameObject go)
+        {
+            go.SetActive(false);
         }
     }
 }

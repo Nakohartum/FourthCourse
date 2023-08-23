@@ -4,5 +4,7 @@ namespace Asteroids
     {
         float Speed { get; }
         void Move(float horizontal, float vertical, float deltaTime);
+        void IncreaseSpeed(float value);
+        void DecreaseSpeed(float value);
     }
 }
